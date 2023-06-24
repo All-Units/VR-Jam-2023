@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrapplingGun : MonoBehaviour {
     
@@ -9,6 +11,53 @@ public class GrapplingGun : MonoBehaviour {
     private bool isGrappling;
 
     public Grappleable grappledItem;
+    public GameObject aimIcon;
+    private bool _isSelected;
+
+    private void Update()
+    {
+        if (_isSelected)
+        {
+            ShowAim();
+        }
+    }
+
+    public void OnSelected()
+    {
+        _isSelected = true;
+    }
+
+    public void OnDeselected()
+    {
+        _isSelected = false;
+        HideAimIcon();
+    }
+
+    private void ShowAim()
+    {
+        if (Physics.Raycast(gunTip.position, gunTip.forward, out var hit, maxDistance, whatIsGrappleable))
+        {
+            aimIcon.transform.position = hit.point;
+            if(aimIcon.activeSelf == false)
+                aimIcon.SetActive(true);
+
+        }
+        else
+        {
+            HideAimIcon();
+        }
+    }
+
+    private void HideAimIcon()
+    {
+        if (aimIcon.activeSelf)
+            aimIcon.SetActive(false);
+    }
+
+    private void HideAim()
+    {
+        throw new NotImplementedException();
+    }
 
     /// <summary>
     /// Call whenever we want to start a grapple
