@@ -76,6 +76,12 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  retractCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   maxLerpTime: 0.3
 --- !u!120 &1031429534
 LineRenderer:
@@ -284,6 +290,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 96465223918091920, guid: f49dc5cd64a1e004c988509fc919b348,
+        type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 96465223918091920, guid: f49dc5cd64a1e004c988509fc919b348,
         type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
@@ -532,6 +543,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 446053818881119970}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &764012327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702930524571181525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd49bcea87784b9186167ae694951421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsGrappleable:
+    serializedVersion: 2
+    m_Bits: 1
+  gunTip: {fileID: 2925957493200526960}
+  grappledItem: {fileID: 0}
 --- !u!114 &1413634561910563369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,22 +588,6 @@ MonoBehaviour:
     type: 3}
   m_StartPoint: {fileID: 2925957493200526960}
   m_LaunchSpeed: 500
---- !u!114 &764012327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4702930524571181525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd49bcea87784b9186167ae694951421, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whatIsGrappleable:
-    serializedVersion: 2
-    m_Bits: 1
-  gunTip: {fileID: 2925957493200526960}
 --- !u!1001 &992995720628292167
 PrefabInstance:
   m_ObjectHideFlags: 0
