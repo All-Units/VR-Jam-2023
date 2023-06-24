@@ -1362,6 +1362,7 @@ GameObject:
   - component: {fileID: 8488135244037004111}
   - component: {fileID: 643447418570708483}
   - component: {fileID: 6527537729205942131}
+  - component: {fileID: 1642533092445782803}
   - component: {fileID: 1181090779087709155}
   m_Layer: 0
   m_Name: StylShip_SailMid1
@@ -1378,7 +1379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202353666874911036}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0437763, y: 8.7333, z: 5.4217553}
+  m_LocalPosition: {x: 1.0437769, y: 8.785568, z: 5.4217553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1435,6 +1436,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1642533092445782803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202353666874911036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05ace146aa65cb4c8dc80c6a2352b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPosValue: 16.6
+  minPosValue: 13.09
 --- !u!64 &1181090779087709155
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2637,6 +2652,7 @@ GameObject:
   - component: {fileID: 2330978294464800336}
   - component: {fileID: 2109976233726868306}
   - component: {fileID: 7907389495241661795}
+  - component: {fileID: 394861029850856271}
   - component: {fileID: 148279740158485211}
   m_Layer: 0
   m_Name: StylShip_SailMid2
@@ -2653,7 +2669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3878862094043865695}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0377574, y: 21.437267, z: 4.5263095}
+  m_LocalPosition: {x: 1.037758, y: 21.560574, z: 4.5263095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2710,6 +2726,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &394861029850856271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878862094043865695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05ace146aa65cb4c8dc80c6a2352b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPosValue: 23.38
+  minPosValue: 21.8
 --- !u!64 &148279740158485211
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4500,6 +4530,7 @@ GameObject:
   - component: {fileID: 5972363505502699684}
   - component: {fileID: 4988802963735176447}
   - component: {fileID: 4899843294402328369}
+  - component: {fileID: 5646671640504186031}
   - component: {fileID: 578898375635083907}
   m_Layer: 0
   m_Name: StylShip_SailFront
@@ -4516,7 +4547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7946011655033106591}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0377579, y: 7.3410425, z: 15.238306}
+  m_LocalPosition: {x: 1.037758, y: 7.1868587, z: 15.238306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4573,6 +4604,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5646671640504186031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946011655033106591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05ace146aa65cb4c8dc80c6a2352b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPosValue: 14.7
+  minPosValue: 12
 --- !u!64 &578898375635083907
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4890,6 +4935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9036149285931199850}
+  - component: {fileID: 2830444713803774717}
   m_Layer: 0
   m_Name: StylShip_Unity
   m_TagString: Untagged
@@ -4913,6 +4959,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2830444713803774717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515472688152868816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fb2f4198c2ce14d9d5526319aa3a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sailControllers:
+  - {fileID: 5646671640504186031}
+  - {fileID: 1642533092445782803}
+  - {fileID: 394861029850856271}
+  currentValue: 1
 --- !u!1 &8650887875610879589
 GameObject:
   m_ObjectHideFlags: 0
