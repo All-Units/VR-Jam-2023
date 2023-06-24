@@ -16,23 +16,28 @@ public class GrapplingRope : MonoBehaviour {
     [SerializeField] private float maxLerpTime = 12f;
     private float _currentLerpTime = 0;
     private bool _reachedMaxDistance;
+    private Rigidbody _gunRigidbody;
+
+    public ShipMover ship;
 
 
     private void Awake() {
         _lineRenderer = GetComponent<LineRenderer>();
         _spring = new Spring();
         _spring.SetTarget(0);
+        _gunRigidbody = grapplingGun.GetComponent<Rigidbody>();
     }
     
     //Called after Update
-    private void FixedUpdate() {
+    private void Update() {
         DrawRope();
     }
 
     private void DrawRope() 
     {
         var grapplePoint = grapplingGun.GetGrapplePoint();
-        var gunTipPosition = grapplingGun.gunTip.position;
+        var gunTipPosition = grapplingGun.gunTip.position + (Vector3.forward * (ship.moveSpeed * Time.deltaTime));
+        
         var up = Quaternion.LookRotation((grapplePoint - gunTipPosition).normalized) * Vector3.up;
 
         //If not grappling, don't draw rope
@@ -75,6 +80,9 @@ public class GrapplingRope : MonoBehaviour {
         }
         
         DrawPoints(up, gunTipPosition);
+
+        /*if (_reachedMaxDistance && grapplingGun.IsGrappling())
+            grapplingGun.IsGrappling();*/
     }
 
     private void DrawPoints(Vector3 up, Vector3 gunTipPosition)
