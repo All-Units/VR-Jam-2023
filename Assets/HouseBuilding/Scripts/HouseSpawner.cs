@@ -8,7 +8,9 @@ public class HouseSpawner : MonoBehaviour
 {
     [Tooltip("The number of houses visible on each side of the sidewalk")]
     [SerializeField] private int housesPerSide = 20;
+    [SerializeField] private float treePercentage = 0.5f;
     [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
+    [SerializeField] private List<GameObject> treePrefabs = new List<GameObject>();
     
 
     [SerializeField] private GameObject roadPrefab;
@@ -62,6 +64,16 @@ public class HouseSpawner : MonoBehaviour
             house.transform.position = Vector3.zero;
             house.gameObject.SetActive(false);
             house.gameObject.name = $"House{i}";
+
+            foreach (Transform child in house.transform.Find("PlantPoints"))
+            {
+                if (Random.Range(0f, 100f) > (treePercentage * 100f))
+                    continue;
+                GameObject tree = Instantiate(treePrefabs.GetRandom(), child);
+                tree.transform.localPosition = Vector3.zero;
+                tree.transform.localScale *= Random.Range(0.6f, 1.4f);
+
+            }
         }
     }
     
