@@ -14,6 +14,7 @@ public class GrapplingRope : MonoBehaviour {
     public AnimationCurve affectCurve;
     [SerializeField] private float maxLerpTime = 12f;
     private float currentLerpTime = 0;
+    private bool reachedMaxDistance;
     
 
     void Awake() {
@@ -33,14 +34,12 @@ public class GrapplingRope : MonoBehaviour {
         var gunTipPosition = grapplingGun.gunTip.position;
         var up = Quaternion.LookRotation((grapplePoint - gunTipPosition).normalized) * Vector3.up;
 
-
-        
         //If not grappling, don't draw rope
         if (!grapplingGun.IsGrappling())
         {
-            currentLerpTime -= Time.deltaTime * 2;
+            currentLerpTime -= Time.deltaTime * 1.3f;
             currentLerpTime = Mathf.Clamp(currentLerpTime, 0, maxLerpTime);
-            
+
             if(currentLerpTime <= 0)
             {
                 currentGrapplePosition = grapplingGun.gunTip.position;
@@ -52,6 +51,8 @@ public class GrapplingRope : MonoBehaviour {
         }
         else
         {
+            reachedMaxDistance = currentLerpTime + Time.deltaTime >= maxLerpTime;
+            
             currentLerpTime += Time.deltaTime;
             currentLerpTime = Mathf.Clamp(currentLerpTime, 0, maxLerpTime);
         }
@@ -66,6 +67,12 @@ public class GrapplingRope : MonoBehaviour {
         spring.Update(Time.deltaTime);
         
         currentGrapplePosition = Vector3.Lerp(gunTipPosition, grapplePoint, currentLerpTime / maxLerpTime);
+
+        if (!grapplingGun.IsGrappling() && reachedMaxDistance && grapplingGun.grappledItem)
+        {
+            grapplingGun.grappledItem.transform.position = currentGrapplePosition;
+        }
+        
         DrawPoints(up, gunTipPosition);
     }
 

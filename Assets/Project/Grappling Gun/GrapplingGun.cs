@@ -8,17 +8,21 @@ public class GrapplingGun : MonoBehaviour {
     private float maxDistance = 100f;
     private bool isGrappling;
 
+    public Grappleable grappledItem;
+
     /// <summary>
     /// Call whenever we want to start a grapple
     /// </summary>
-    public void StartGrapple() {
+    public void StartGrapple() 
+    {
         RaycastHit hit;
         if (Physics.Raycast(gunTip.position, gunTip.forward, out hit, maxDistance, whatIsGrappleable)) {
             grapplePoint = hit.point;
             isGrappling = true;
+            
+            grappledItem = hit.collider.gameObject.GetComponent<Grappleable>();
         }
     }
-
 
     /// <summary>
     /// Call whenever we want to stop a grapple
@@ -27,8 +31,6 @@ public class GrapplingGun : MonoBehaviour {
     {
         isGrappling = false;
     }
-
-
 
     public bool IsGrappling() {
         return isGrappling;
