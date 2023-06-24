@@ -9,6 +9,16 @@ public class HouseSpawner : MonoBehaviour
 
     [SerializeField] private GameObject roadPrefab;
     [SerializeField] private Transform roadParent;
+    
+    /// <summary>
+    /// The pool of houses available to spawn
+    /// </summary>
+    private List<GameObject> available = new List<GameObject>();
+    
+    /// <summary>
+    /// Houses that are currently active in the game view
+    /// </summary>
+    private List<GameObject> active = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
