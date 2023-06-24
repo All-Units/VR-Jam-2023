@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Template/Scenes/2 Game Scene.unity
     guid: eccb2bc76074b2849b626b75e749890d
+  - enabled: 1
+    path: Assets/Project/Scenes/Dane_Ship_Movement.unity
+    guid: 7a6b29d61ae961646ab8a4f41575be7d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2238d457089b9494896515a25debf01c,
       type: 2}
