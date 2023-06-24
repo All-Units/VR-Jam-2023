@@ -78,7 +78,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   retractCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.006011963
+      value: 0.53790283
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.42948204
+      value: 0.7878541
+      inSlope: 4.7903237
+      outSlope: 4.7903237
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.12970705
+    - serializedVersion: 3
+      time: 1.0313375
+      value: 1.6456182
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

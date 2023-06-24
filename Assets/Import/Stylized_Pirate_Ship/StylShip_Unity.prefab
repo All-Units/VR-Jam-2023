@@ -8098,6 +8098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 533119146092488818, guid: 9fada578b5cb80f439bd08f82de565f3,
         type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 533119146092488818, guid: 9fada578b5cb80f439bd08f82de565f3,
+        type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
