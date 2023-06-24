@@ -1102,6 +1102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   housesPerSide: 30
+  treePercentage: 0.5
+  packagePercentage: 0.7
   prefabs:
   - {fileID: 8237614860833434127, guid: b3c9260d5da69054fb677ad1757d1592, type: 3}
   - {fileID: 6239618536036251459, guid: a759ea2e2f792ce488ac22830b7ece73, type: 3}
@@ -1114,6 +1116,10 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 4eea440ab5d93ac438de3c976c009a9a, type: 3}
   - {fileID: 919132149155446097, guid: 971850d3e876cc0449977e44d2cfe5a2, type: 3}
   - {fileID: 919132149155446097, guid: 7977c1f62eac0614a8e55685aa29e193, type: 3}
+  packagePrefabs:
+  - {fileID: 7114215187732604479, guid: 262087882db4e1b4abfdb858e7dc3189, type: 3}
+  - {fileID: 6495740385161117812, guid: 4fd328782be4adf46911cf846046367c, type: 3}
+  - {fileID: 1029857693693377759, guid: eb2ade44a8b548d438ddec6a58e16475, type: 3}
   roadPrefab: {fileID: 2851641919160941510, guid: 6711ac56f8adb7241b52468f763214e0,
     type: 3}
   roadParent: {fileID: 1155427693}
@@ -2073,7 +2079,7 @@ PrefabInstance:
     - target: {fileID: 6242851353689079636, guid: f9da24840c60a814295b88e6319d9f9c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 91
       objectReference: {fileID: 0}
     - target: {fileID: 6242851353689079636, guid: f9da24840c60a814295b88e6319d9f9c,
         type: 3}
@@ -3194,7 +3200,7 @@ PrefabInstance:
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 262.09998
       objectReference: {fileID: 0}
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64,
         type: 3}
@@ -3204,7 +3210,7 @@ PrefabInstance:
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 147.04999
       objectReference: {fileID: 0}
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64,
         type: 3}
@@ -3836,7 +3842,7 @@ PrefabInstance:
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 262.09998
       objectReference: {fileID: 0}
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de,
         type: 3}
@@ -3846,7 +3852,7 @@ PrefabInstance:
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 147.04999
       objectReference: {fileID: 0}
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de,
         type: 3}

@@ -9,8 +9,10 @@ public class HouseSpawner : MonoBehaviour
     [Tooltip("The number of houses visible on each side of the sidewalk")]
     [SerializeField] private int housesPerSide = 20;
     [SerializeField] private float treePercentage = 0.5f;
+    [SerializeField] private float packagePercentage = 0.5f;
     [SerializeField] private List<GameObject> prefabs = new List<GameObject>();
     [SerializeField] private List<GameObject> treePrefabs = new List<GameObject>();
+    [SerializeField] private List<GameObject> packagePrefabs = new List<GameObject>();
     
 
     [SerializeField] private GameObject roadPrefab;
@@ -38,7 +40,6 @@ public class HouseSpawner : MonoBehaviour
             nextHouseZ += 40f;
             lastZ += 40f;
             activateRow(lastZ);
-            print($"activating another row at {lastZ}");
         }
 
         if (z >= nextRoadZ)
@@ -111,6 +112,10 @@ public class HouseSpawner : MonoBehaviour
                 Transform house = activeParent.GetChild(0);
                 house.gameObject.SetActive(false);
                 house.parent = availableParent;
+                foreach (Transform child in house.Find("PackagePoint"))
+                {
+                    Destroy(child.gameObject);
+                }
             }
         }
     }
@@ -141,6 +146,26 @@ public class HouseSpawner : MonoBehaviour
             Vector3 scale = house.localScale;
             scale.x *= -1;
             house.localScale = scale;
+        }
+
+        StartCoroutine(_spawnPackages(house.Find("PackagePoint")));
+    }
+
+    IEnumerator _spawnPackages(Transform spawnPoint)
+    {
+        while (true)
+        {
+            if (Random.Range(0f, 100f) > (packagePercentage * 100f))
+                yield break;
+            GameObject package = Instantiate(packagePrefabs.GetRandom(), spawnPoint);
+            Vector3 unit = Random.insideUnitSphere;
+            unit.y = 0f;
+            package.transform.localPosition = Vector3.zero;
+            package.transform.localScale *= 1.4f;
+            Vector3 rot = new Vector3(Random.Range(0f, 30f), Random.Range(0f, 360f), Random.Range(0f, 30f));
+            package.transform.eulerAngles = rot;
+            package.transform.Translate(unit);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
