@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GrapplingRope : MonoBehaviour {
     private Spring _spring;
@@ -20,6 +21,7 @@ public class GrapplingRope : MonoBehaviour {
 
     public ShipMover ship;
 
+    public UnityEvent OnHit;
 
     private void Awake() {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -57,7 +59,13 @@ public class GrapplingRope : MonoBehaviour {
         }
         else
         {
+            var prevReached = _reachedMaxDistance;
             _reachedMaxDistance = _currentLerpTime + Time.deltaTime >= maxLerpTime;
+
+            if (prevReached != _reachedMaxDistance && _reachedMaxDistance)
+            {
+                OnHit?.Invoke();
+            }
             
             _currentLerpTime += Time.deltaTime;
             _currentLerpTime = Mathf.Clamp(_currentLerpTime, 0, maxLerpTime);
@@ -90,7 +98,7 @@ public class GrapplingRope : MonoBehaviour {
         for (var i = 0; i < quality + 1; i++)
         {
             var delta = i / (float)quality;
-            var offset = up * (waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * _spring.Value * affectCurve.Evaluate(delta));
+            var offset = _reachedMaxDistance ? Vector3.zero : up * (waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * _spring.Value * affectCurve.Evaluate(delta));
 
             _lineRenderer.SetPosition(i, Vector3.Lerp(gunTipPosition, _currentGrapplePosition, delta) + offset);
         }
