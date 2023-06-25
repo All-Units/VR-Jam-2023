@@ -85,7 +85,7 @@ public class GrapplingRope : MonoBehaviour {
         _spring.Update(Time.deltaTime);
         
         _currentGrapplePosition = Vector3.Lerp(gunTipPosition, grapplePoint, _currentLerpTime / maxLerpTime);
-        hook.transform.position = _currentGrapplePosition;
+        hook.transform.position = _currentGrapplePosition - (Vector3.forward * (ship.moveSpeed * Time.deltaTime));
         // hook.transform.rotation = Quaternion.LookRotation((grapplePoint - gunTipPosition).normalized);
 
         if (!grapplingGun.IsGrappling() && _reachedMaxDistance && grapplingGun.grappledItem)
