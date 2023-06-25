@@ -1,7 +1,11 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class HoardCollectionTrigger : MonoBehaviour
 {
+    public GameObject collectParticles;
+    public AudioClipController audioClipController;
+    
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log($"Collecting! {other.gameObject.name}");
@@ -13,6 +17,10 @@ public class HoardCollectionTrigger : MonoBehaviour
         Destroy(grappleable.gameObject);
 
         // Spawn particles at prev location
+        var particles = Instantiate(collectParticles, pos, quaternion.identity);
+        audioClipController.PlayClip();
+        
+        Destroy(particles, 2f);
             
         // Turn on hoard object
         HoardManager.Collect();

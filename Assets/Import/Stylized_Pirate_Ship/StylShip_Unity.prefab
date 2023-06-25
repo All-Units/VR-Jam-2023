@@ -7689,6 +7689,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9036149285931199850}
     m_Modifications:
+    - target: {fileID: 9159354721639983820, guid: 09b8dbb3e315e9d4a8056a9a9b6f60eb,
+        type: 3}
+      propertyPath: collectParticles
+      value: 
+      objectReference: {fileID: 1871480451980429699, guid: 0ccc0135a7ea1964ba0084048394935c,
+        type: 3}
+    - target: {fileID: 9159354721639983820, guid: 09b8dbb3e315e9d4a8056a9a9b6f60eb,
+        type: 3}
+      propertyPath: audioClipController
+      value: 
+      objectReference: {fileID: 548322757}
     - target: {fileID: 9159354721639983821, guid: 09b8dbb3e315e9d4a8056a9a9b6f60eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -7757,6 +7768,123 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1884780825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9159354721376572375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9159354721639983822, guid: 09b8dbb3e315e9d4a8056a9a9b6f60eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1884780825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &548322757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159354721376572375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54d25d40c6ef9c47a4bb3f7388ff339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 875b692c69c7d2d41b736a465f939e65, type: 3}
+  _maxInclusivePitchVariance: 0.2
+--- !u!82 &548322756
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159354721376572375}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2082356710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8080,6 +8208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 533119146092488818, guid: 9fada578b5cb80f439bd08f82de565f3,
+        type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4702930524571181525, guid: 9fada578b5cb80f439bd08f82de565f3,
         type: 3}
