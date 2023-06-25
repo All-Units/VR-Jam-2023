@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e35b3e516e8c7140aac344449e17fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 12
+  moveSpeed: 14
   lightTime: 0.5
   tireRotateSpeed: 10
   closeDistance: 35
