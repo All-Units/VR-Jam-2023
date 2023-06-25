@@ -96,6 +96,15 @@ public class PoliceCar : MonoBehaviour
         explosion.transform.position = transform.position + new Vector3(0f, yOffset, 3f);
         Destroy(explosion, 3f);
         explosion.transform.localScale *= explosionScale;
+        Transform sound = transform.Find("AudioListener");
+        if (sound != null)
+        {
+            sound.parent = null;
+            sound.gameObject.SetActive(true);
+        }
+        
+        //Destroy(sound.gameObject, 2f);
+        
         //UnityEditor.EditorApplication.isPaused = true;
 
     }
