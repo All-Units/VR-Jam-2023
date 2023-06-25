@@ -1242,6 +1242,7 @@ GameObject:
   - component: {fileID: 7066949762437942326}
   - component: {fileID: 7066949762437942327}
   - component: {fileID: -6710017726082754771}
+  - component: {fileID: 7953493166298172606}
   m_Layer: 0
   m_Name: PoliceCar
   m_TagString: Untagged
@@ -1397,6 +1398,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7953493166298172606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066949762437942313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6567738, y: 1.1126542, z: 3.7308466}
+  m_Center: {x: 0.019813627, y: 0.69655883, z: 0.08677614}
 --- !u!1 &7486926899154279757
 GameObject:
   m_ObjectHideFlags: 0

@@ -4372,8 +4372,8 @@ MonoBehaviour:
   carPrefab: {fileID: 7066949762437942313, guid: a42831181e9bd8741ad64fcfce31ed1d,
     type: 3}
   ship: {fileID: 1311755909}
-  spawnDelay: 3
-  spawnBehindDistance: 85
+  spawnDelay: 12
+  spawnBehindDistance: 200
 --- !u!1 &1152037190
 GameObject:
   m_ObjectHideFlags: 0
@@ -5723,7 +5723,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 0.84
   Loop: 0
   Mute: 0
