@@ -1137,6 +1137,12 @@ MonoBehaviour:
   lightTime: 0.5
   tireRotateSpeed: 10
   closeDistance: 35
+  explosionFX:
+  - {fileID: 7858630579720310484, guid: 9728d8ffb265338428947d6a85ff456b, type: 3}
+  - {fileID: 2134659548691143814, guid: c5a79d18a7136134d85e3b115e5c0413, type: 3}
+  - {fileID: 7439331299682624969, guid: d6d3ac2647fe8e14ca23bc728999605d, type: 3}
+  explosionScale: 1000
+  yOffset: 3
 --- !u!82 &-6710017726082754771
 AudioSource:
   m_ObjectHideFlags: 0

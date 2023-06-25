@@ -11,6 +11,7 @@ public class PoliceCar : MonoBehaviour
     [SerializeField] private float tireRotateSpeed = 10f;
 
     [SerializeField] private float closeDistance = 10f;
+    [SerializeField] private List<GameObject> explosionFX = new List<GameObject>();
     private Light[] lights;
 
     public static Action OnEndGame;
@@ -85,6 +86,18 @@ public class PoliceCar : MonoBehaviour
                 light.gameObject.SetActive(!light.gameObject.activeInHierarchy);
             yield return new WaitForSeconds(lightTime);
         }
+    }
+
+    public float explosionScale = 3f;
+    public float yOffset = 5f;
+    public void Explode()
+    {
+        GameObject explosion = Instantiate(explosionFX.GetRandom());
+        explosion.transform.position = transform.position + new Vector3(0f, yOffset, 3f);
+        Destroy(explosion, 3f);
+        explosion.transform.localScale *= explosionScale;
+        //UnityEditor.EditorApplication.isPaused = true;
+
     }
 
 }
