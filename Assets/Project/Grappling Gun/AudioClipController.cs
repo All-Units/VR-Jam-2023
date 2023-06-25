@@ -13,6 +13,8 @@ public class AudioClipController : MonoBehaviour
 
     private void Awake()
     {
+        if (_audioSource == null)
+            _audioSource = GetComponent<AudioSource>();
         initialPitch = _audioSource.pitch;
         if (playOnAwake)
         {
