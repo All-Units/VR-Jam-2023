@@ -18,6 +18,8 @@ public class GrapplingRope : MonoBehaviour {
     private float _currentLerpTime = 0;
     private bool _reachedMaxDistance;
     private Rigidbody _gunRigidbody;
+    public GameObject hook;
+    public Vector3 hookHomePosition;
 
     public ShipMover ship;
 
@@ -28,6 +30,7 @@ public class GrapplingRope : MonoBehaviour {
         _spring = new Spring();
         _spring.SetTarget(0);
         _gunRigidbody = grapplingGun.GetComponent<Rigidbody>();
+        hookHomePosition = hook.transform.localPosition;
     }
     
     //Called after Update
@@ -54,6 +57,7 @@ public class GrapplingRope : MonoBehaviour {
                 _spring.Reset();
                 if (_lineRenderer.positionCount > 0)
                     _lineRenderer.positionCount = 0;
+                hook.transform.localPosition = hookHomePosition;
                 return;
             }
         }
@@ -81,6 +85,8 @@ public class GrapplingRope : MonoBehaviour {
         _spring.Update(Time.deltaTime);
         
         _currentGrapplePosition = Vector3.Lerp(gunTipPosition, grapplePoint, _currentLerpTime / maxLerpTime);
+        hook.transform.position = _currentGrapplePosition;
+        // hook.transform.rotation = Quaternion.LookRotation((grapplePoint - gunTipPosition).normalized);
 
         if (!grapplingGun.IsGrappling() && _reachedMaxDistance && grapplingGun.grappledItem)
         {
