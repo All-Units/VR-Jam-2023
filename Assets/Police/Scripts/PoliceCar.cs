@@ -37,8 +37,8 @@ public class PoliceCar : MonoBehaviour
 
         if (!close && closeEnough.Contains(this))
             closeEnough.Remove(this);
-        if (closeEnough.Count == 3)
-            Quit();
+        //if (closeEnough.Count == 3)
+            //Quit();
             
             
     }

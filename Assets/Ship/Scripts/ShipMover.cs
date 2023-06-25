@@ -21,4 +21,9 @@ public class ShipMover : MonoBehaviour
         transform.Translate(new Vector3(0f, 0f, z));
         pos = transform.position;
     }
+
+    public void ResetGunTo(Transform target, Transform gun)
+    {
+        gun.position = target.position;
+    }
 }
