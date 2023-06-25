@@ -12,6 +12,10 @@ public class PoliceCar : MonoBehaviour
 
     [SerializeField] private float closeDistance = 10f;
     private Light[] lights;
+
+    public static Action OnEndGame;
+    private bool gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +23,17 @@ public class PoliceCar : MonoBehaviour
         lights[1].gameObject.SetActive(false);
         lights[3].gameObject.SetActive(false);
         StartCoroutine(alternateLights());
+        OnEndGame += OnEndGameInternal;
+    }
+
+    private void OnDestroy()
+    {
+        OnEndGame -= OnEndGameInternal;
+    }
+
+    private void OnEndGameInternal()
+    {
+        gameOver = true;
     }
 
     private static HashSet<PoliceCar> closeEnough = new HashSet<PoliceCar>();
@@ -37,10 +52,14 @@ public class PoliceCar : MonoBehaviour
 
         if (!close && closeEnough.Contains(this))
             closeEnough.Remove(this);
-        //if (closeEnough.Count == 3)
-            //Quit();
-            
-            
+        if (closeEnough.Count == 3)
+            EndGame();
+
+    }
+
+    private static void EndGame()
+    {
+        OnEndGame?.Invoke();
     }
 
     void Quit()
