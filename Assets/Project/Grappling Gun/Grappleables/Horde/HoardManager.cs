@@ -15,11 +15,17 @@ public class HoardManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        PlayerPrefs.SetInt("currentScore", 0);
     }
 
     private void AddToHoard()
     {
         _score++;
+        PlayerPrefs.SetInt("currentScore", _score);
+        if (_score > PlayerPrefs.GetInt("highScore"))
+        {
+            PlayerPrefs.SetInt("highScore", _score);
+        }
         OnScoreChange?.Invoke(_score);
         
         if (availableHoard.Count == 0)

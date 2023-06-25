@@ -24,4 +24,12 @@ public class GunReset : MonoBehaviour
         rb.velocity = Vector3.zero;
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "GunResetFloor")
+        {
+            ResetPosition();
+        }
+    }
 }
