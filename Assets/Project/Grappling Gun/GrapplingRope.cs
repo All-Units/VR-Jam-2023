@@ -98,7 +98,7 @@ public class GrapplingRope : MonoBehaviour {
         for (var i = 0; i < quality + 1; i++)
         {
             var delta = i / (float)quality;
-            var offset = up * (waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * _spring.Value * affectCurve.Evaluate(delta));
+            var offset = _reachedMaxDistance ? Vector3.zero : up * (waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * _spring.Value * affectCurve.Evaluate(delta));
 
             _lineRenderer.SetPosition(i, Vector3.Lerp(gunTipPosition, _currentGrapplePosition, delta) + offset);
         }
