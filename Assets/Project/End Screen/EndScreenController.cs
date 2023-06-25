@@ -49,8 +49,6 @@ public class EndScreenController : MonoBehaviour
         
         Debug.Log("Complete!");
         
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        SceneTransitionManager.singleton.GoToSceneAsync(2);
     }
 }
