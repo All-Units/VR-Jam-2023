@@ -10,6 +10,7 @@ public class Cannonball : MonoBehaviour
         PoliceCar car = other.GetComponentInParent<PoliceCar>();
         if (car != null)
         {
+            car.Explode();
             Destroy(car.gameObject);    
         }
         
