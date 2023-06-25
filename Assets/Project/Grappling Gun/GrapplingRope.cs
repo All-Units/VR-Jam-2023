@@ -24,6 +24,7 @@ public class GrapplingRope : MonoBehaviour {
     public ShipMover ship;
 
     public UnityEvent OnHit;
+    public UnityEvent OnFullyExtend;
 
     private void Awake() {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -68,6 +69,7 @@ public class GrapplingRope : MonoBehaviour {
 
             if (prevReached != _reachedMaxDistance && _reachedMaxDistance)
             {
+                OnFullyExtend?.Invoke();
                 if(grapplingGun.grappledItem)
                     OnHit?.Invoke();
             }

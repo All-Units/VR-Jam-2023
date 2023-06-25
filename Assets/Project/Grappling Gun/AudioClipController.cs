@@ -7,11 +7,13 @@ public class AudioClipController : MonoBehaviour
     [SerializeField] private List<AudioClip> _clips;
     private AudioSource _audioSource;
     [SerializeField]private float _maxInclusivePitchVariance;
+    private float initialPitch;
 
     public bool playOnAwake = false;
 
     private void Awake()
     {
+        initialPitch = _audioSource.pitch;
         if (playOnAwake)
         {
             PlayClip();
@@ -23,7 +25,7 @@ public class AudioClipController : MonoBehaviour
         var clip = _clips.GetRandom();
 
         _audioSource.clip = clip;
-        _audioSource.pitch += Random.Range(-_maxInclusivePitchVariance, _maxInclusivePitchVariance);
+        _audioSource.pitch = initialPitch + Random.Range(-_maxInclusivePitchVariance, _maxInclusivePitchVariance);
         _audioSource.Play();
     }
 
