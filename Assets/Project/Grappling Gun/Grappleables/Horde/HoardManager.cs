@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class HoardManager : MonoBehaviour
 {
-    private static HoardManager _instance; 
+    private static HoardManager _instance;
+    private int _score = 0;
+    public static Action<int> OnScoreChange;
     
     [SerializeField] private List<GameObject> availableHoard;
     [SerializeField] private List<GameObject> activeHoard;
@@ -17,6 +19,9 @@ public class HoardManager : MonoBehaviour
 
     private void AddToHoard()
     {
+        _score++;
+        OnScoreChange?.Invoke(_score);
+        
         if (availableHoard.Count == 0)
         {
             var go= activeHoard.GetRandom();
