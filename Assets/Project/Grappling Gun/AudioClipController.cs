@@ -23,7 +23,6 @@ public class AudioClipController : MonoBehaviour
         var clip = _clips.GetRandom();
 
         _audioSource.clip = clip;
-        _maxInclusivePitchVariance = .3f;
         _audioSource.pitch += Random.Range(-_maxInclusivePitchVariance, _maxInclusivePitchVariance);
         _audioSource.Play();
     }
