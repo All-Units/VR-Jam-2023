@@ -42,6 +42,9 @@ public class PoliceCar : MonoBehaviour
     {
         float z = (moveSpeed * Time.deltaTime);
         transform.Translate(new Vector3(0f, 0f, z));
+        
+        if(gameOver) return;
+        
         bool close = Vector3.Distance(ShipMover.pos, transform.position) <= closeDistance;
         if (close)
         {
