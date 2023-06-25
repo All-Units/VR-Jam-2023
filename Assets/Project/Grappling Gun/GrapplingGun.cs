@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrapplingGun : MonoBehaviour {
@@ -14,11 +15,37 @@ public class GrapplingGun : MonoBehaviour {
     public GameObject aimIcon;
     private bool _isSelected;
 
+    private XRGrabInteractable _xrGrabInteractable;
+
+    [Header("Events")] 
+    public UnityEvent FiringAHit;
+    public UnityEvent FiringAMiss;
+    public UnityEvent FiringAWhiff;
+
+    private void Start()
+    {
+        _xrGrabInteractable.activated.AddListener(OnActivate);
+    }
+
     private void Update()
     {
         if (_isSelected)
         {
             ShowAim();
+        }
+    }
+
+    private void OnValidate()
+    {
+        _xrGrabInteractable = GetComponent<XRGrabInteractable>();
+    }
+
+    public void OnActivate(BaseInteractionEventArgs args)
+    {
+        if (args.interactorObject is XRBaseControllerInteractor controller)
+        {
+            Debug.Log("Sending Haptic!");
+            controller.SendHapticImpulse(.4f, .15f);
         }
     }
 
@@ -67,10 +94,25 @@ public class GrapplingGun : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(gunTip.position, gunTip.forward, out hit, maxDistance, whatIsGrappleable)) {
             grapplePoint = hit.point;
-            isGrappling = true;
             
             grappledItem = hit.collider.gameObject.GetComponent<Grappleable>();
+
+            if (grappledItem)
+            {
+                FiringAHit?.Invoke();
+            }
+            else
+            {
+                FiringAMiss?.Invoke();
+            }
         }
+        else
+        {
+            grapplePoint = gunTip.position + gunTip.forward * maxDistance;
+            FiringAWhiff?.Invoke();
+        }
+        
+        isGrappling = true;
     }
 
     /// <summary>

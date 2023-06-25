@@ -15,8 +15,15 @@ public class HoardManager : MonoBehaviour
         _instance = this;
     }
 
-    public void AddToHoard()
+    private void AddToHoard()
     {
+        if (availableHoard.Count == 0)
+        {
+            var go= activeHoard.GetRandom();
+            go.SetActive(false);
+            go.SetActive(true);
+            return;
+        }
         var obj = availableHoard.GetRandom();
         availableHoard.Remove(obj);
         
