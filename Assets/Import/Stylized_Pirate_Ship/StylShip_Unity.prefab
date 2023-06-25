@@ -8081,8 +8081,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clips:
-  - {fileID: 8300000, guid: 875b692c69c7d2d41b736a465f939e65, type: 3}
-  _maxInclusivePitchVariance: 0.2
+  - {fileID: 8300000, guid: 9f1f37735305c4cc99b07c19fe48675d, type: 3}
+  - {fileID: 8300000, guid: d0440e1e7ebf542a1884646f52220a69, type: 3}
+  - {fileID: 8300000, guid: 4bae819a7a1fb43dbaa5ecf65df5b7bc, type: 3}
+  _maxInclusivePitchVariance: 0
+  playOnAwake: 0
 --- !u!1001 &2082356710
 PrefabInstance:
   m_ObjectHideFlags: 0
