@@ -68,7 +68,8 @@ public class GrapplingRope : MonoBehaviour {
 
             if (prevReached != _reachedMaxDistance && _reachedMaxDistance)
             {
-                OnHit?.Invoke();
+                if(grapplingGun.grappledItem)
+                    OnHit?.Invoke();
             }
             
             _currentLerpTime += Time.deltaTime;

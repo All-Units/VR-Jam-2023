@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,6 +7,16 @@ public class AudioClipController : MonoBehaviour
     [SerializeField] private List<AudioClip> _clips;
     private AudioSource _audioSource;
     [SerializeField]private float _maxInclusivePitchVariance;
+
+    public bool playOnAwake = false;
+
+    private void Awake()
+    {
+        if (playOnAwake)
+        {
+            PlayClip();
+        }
+    }
 
     public void PlayClip()
     {
