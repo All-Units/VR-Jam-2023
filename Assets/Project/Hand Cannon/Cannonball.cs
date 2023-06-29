@@ -1,19 +1,28 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cannonball : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        PoliceCar car = other.GetComponentInParent<PoliceCar>();
+        Debug.Log($"Colliding with {other.gameObject.name}");
+        if (other.TryGetComponent(out IExplode explodable))
+        {
+            explodable.Explode();
+            Destroy(gameObject);
+            return;
+        }
+        
+        var car = other.GetComponentInParent<PoliceCar>();
         if (car != null)
         {
             car.Explode();
-            Destroy(car.gameObject);    
+            Destroy(gameObject);
+            return;
         }
-        
-        //Destroy(gameObject);
     }
+}
+
+public interface IExplode
+{
+    public void Explode();
 }

@@ -10,12 +10,12 @@ public class ScoreVisualizerController : MonoBehaviour
     
     private void Awake()
     {
-        HoardManager.OnScoreChange += OnScoreChange;
+        HoardManager.onScoreChange += OnScoreChange;
     }
 
     private void OnDestroy()
     {
-        HoardManager.OnScoreChange -= OnScoreChange;
+        HoardManager.onScoreChange -= OnScoreChange;
     }
 
     private void OnScoreChange(int obj)

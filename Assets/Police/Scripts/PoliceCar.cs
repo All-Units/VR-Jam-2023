@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoliceCar : MonoBehaviour
+public class PoliceCar : MonoBehaviour, IExplode
 {
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float lightTime = .5f;
@@ -105,7 +105,8 @@ public class PoliceCar : MonoBehaviour
         //Destroy(sound.gameObject, 2f);
         
         //UnityEditor.EditorApplication.isPaused = true;
-
+        Destroy(gameObject);
     }
-
 }
+
+
