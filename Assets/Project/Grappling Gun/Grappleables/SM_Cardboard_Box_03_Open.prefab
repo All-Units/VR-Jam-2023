@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6353968772375620035}
   - component: {fileID: 8035001702938617446}
   - component: {fileID: 5217130119155438252}
-  - component: {fileID: 6172212428666491869}
   - component: {fileID: 8567466493811647926}
   - component: {fileID: -1659597535856103723}
+  - component: {fileID: 7642663958738566182}
   m_Layer: 0
   m_Name: SM_Cardboard_Box_03_Open
   m_TagString: Untagged
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6172212428666491869
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6009495441231573881}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3053917139213848389, guid: 156f9fb978bb82348a288e42d7343a15, type: 3}
 --- !u!114 &8567466493811647926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +114,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7642663958738566182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009495441231573881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.81961316, y: 0.50343585, z: 0.5824357}
+  m_Center: {x: 0.024280071, y: 0.2508502, z: -0.012448356}

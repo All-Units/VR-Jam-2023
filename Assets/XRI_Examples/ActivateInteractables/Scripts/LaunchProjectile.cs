@@ -27,6 +27,11 @@ namespace UnityEngine.XR.Content.Interaction
         {
             _controller = GetComponent<AudioClipController>();
         }
+        
+        public void OnSelected()
+        {
+            GameManager.instance.OnPickUpLaunchers();
+        }
 
         public void Fire()
         {

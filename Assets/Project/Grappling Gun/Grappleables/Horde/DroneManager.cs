@@ -8,7 +8,9 @@ public class DroneManager : MonoBehaviour
     [SerializeField] private float spawnRate = 2;
     private float _spawnCooldown = 0;
 
-    private void Update()
+    public int totalSpawned = 0;
+
+    /*private void Update()
     {
         if(hoardManager.HasBoxes() == false) return;
         
@@ -18,13 +20,14 @@ public class DroneManager : MonoBehaviour
             SpawnDrone();
             _spawnCooldown = spawnRate;
         }
-    }
+    }*/
 
     public void SpawnDrone()
     {
         var box = hoardManager.GetActiveBox();
 
-        var drone = Instantiate(droneController, box.transform);
+        var drone = Instantiate(droneController, box.transform.parent);
         drone.targetBox = box;
+        totalSpawned++;
     }
 }

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784e13aa63ef448e83ae3c5acf44eed3, type: 3}
+  m_Name: Difficulty Scale
+  m_EditorClassIdentifier: 
+  currentLevel: 4
+  levels:
+  - scoreToReach: 5
+    modifiers:
+    - {fileID: 11400000, guid: 4636e40fae717c549afa4378b11e6ef6, type: 2}
+    - {fileID: 11400000, guid: bfb4c9dfa0858f5478a6576f3cca8188, type: 2}
+  - scoreToReach: 15
+    modifiers:
+    - {fileID: 11400000, guid: 41c5f3471cadf6641a0d37f24ab6a95e, type: 2}
+  - scoreToReach: 25
+    modifiers:
+    - {fileID: 11400000, guid: 8b69ef7d295992e45ac0916a0acaf1f4, type: 2}
+    - {fileID: 11400000, guid: d13f37757fadd164e8d8afdcee5b751c, type: 2}
+  - scoreToReach: 40
+    modifiers:
+    - {fileID: 11400000, guid: 8579e420abd504747b73425bcb833c8a, type: 2}
+    - {fileID: 11400000, guid: 17f4ef99c2f5b434e93199b666e60914, type: 2}
+  - scoreToReach: 50
+    modifiers:
+    - {fileID: 11400000, guid: e822e61bd781a4245ad4a548f29a5bd6, type: 2}
+    - {fileID: 11400000, guid: f75c5e4da2ac8fc478c292b7dcb5779e, type: 2}
+  - scoreToReach: 75
+    modifiers:
+    - {fileID: 11400000, guid: 9829ff5dbd26c1c4f8780901ba4e92f3, type: 2}
+    - {fileID: 11400000, guid: 531b23a8ba460324f908dae62ff3dc38, type: 2}
+  - scoreToReach: 125
+    modifiers:
+    - {fileID: 11400000, guid: e1be2083e117ae1459bf9816a4928b2d, type: 2}
+    - {fileID: 11400000, guid: d27e18870c189404c8d402f50bb737cb, type: 2}
+  - scoreToReach: 201
+    modifiers:
+    - {fileID: 11400000, guid: d1f093e384c69ee46963ac0657f1f57c, type: 2}

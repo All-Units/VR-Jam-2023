@@ -52,6 +52,7 @@ public class GrapplingGun : MonoBehaviour {
     public void OnSelected()
     {
         _isSelected = true;
+        GameManager.instance.OnPickUpLaunchers();
     }
 
     public void OnDeselected()

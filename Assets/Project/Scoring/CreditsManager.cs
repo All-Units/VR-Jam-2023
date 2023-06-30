@@ -1,27 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class CreditsManager : MonoBehaviour
 {
-    //[SerializeField] private TextMeshProUGUI scoreText;
-    private int b;
-
-    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshPro scoreText2;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        scoreText2.text = $"Last score: {PlayerPrefs.GetInt("currentScore")}\n" +
-                         $"High score: {PlayerPrefs.GetInt("highScore")}";
+        scoreText2.text = $"Last score: {PlayerPrefs.GetInt(ScoreTracker.BoxesCollectedCurrent)}\n" +
+                         $"High score: {PlayerPrefs.GetInt(ScoreTracker.BoxesCollectedHighscore)}\n";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void MainMenu(){
         SceneTransitionManager.singleton.GoToSceneAsync(0);
     }

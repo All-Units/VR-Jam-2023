@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 public class HoardManager : MonoBehaviour
 {
     private static HoardManager _instance;
-    private int _score = 0;
+    public int _score = 0;
     public static Action<int> onScoreChange;
     
     [SerializeField] private List<GameObject> availableHoard;
@@ -23,11 +23,8 @@ public class HoardManager : MonoBehaviour
     private void AddToHoard()
     {
         _score++;
-        PlayerPrefs.SetInt("currentScore", _score);
-        if (_score > PlayerPrefs.GetInt("highScore"))
-        {
-            PlayerPrefs.SetInt("highScore", _score);
-        }
+        GameManager.instance.ModifyScore(1);
+
         onScoreChange?.Invoke(_score);
         
         if (availableHoard.Count == 0)
@@ -70,6 +67,7 @@ public class HoardManager : MonoBehaviour
             box.SetActive(false);
             
             _score--;
+            GameManager.instance.ModifyScore(-2);
             PlayerPrefs.SetInt("currentScore", _score);
             if (_score > PlayerPrefs.GetInt("highScore"))
             {

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunReset : MonoBehaviour
@@ -22,7 +19,6 @@ public class GunReset : MonoBehaviour
         transform.localPosition = startPos;
         transform.localEulerAngles = startRot;
         rb.velocity = Vector3.zero;
-
     }
 
     private void OnTriggerEnter(Collider other)

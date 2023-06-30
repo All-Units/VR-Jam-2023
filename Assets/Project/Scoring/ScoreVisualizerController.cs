@@ -1,16 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class ScoreVisualizerController : MonoBehaviour
 {
-    private TMP_Text _tmpText;
+    [SerializeField] private TMP_Text _tmpText;
     
     private void Awake()
     {
         HoardManager.onScoreChange += OnScoreChange;
+        if(_tmpText == null)
+            _tmpText = GetComponentInChildren<TMP_Text>();
     }
 
     private void OnDestroy()

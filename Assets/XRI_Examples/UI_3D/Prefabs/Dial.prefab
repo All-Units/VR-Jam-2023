@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5047785398308574341}
   - {fileID: 3006098657255122495}
@@ -55,6 +56,13 @@ MonoBehaviour:
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -85,6 +93,9 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -237,31 +248,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153924999194243853, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
         type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153924999194243853, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
+        type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9153924999194243853, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7df1e18cc7ed2b04088dc94ee9fd931e, type: 3}
---- !u!4 &5047785398308574341 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
-    type: 3}
-  m_PrefabInstance: {fileID: 4722005990821294958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1437672436447973821 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5941457476853523155, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
-    type: 3}
-  m_PrefabInstance: {fileID: 4722005990821294958}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4507726264892719203 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9153924999194243853, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
     type: 3}
   m_PrefabInstance: {fileID: 4722005990821294958}
   m_PrefabAsset: {fileID: 0}
@@ -294,3 +298,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.053850874
   m_Center: {x: -0.000000067055225, y: 0.048587378, z: -0.00083098747}
+--- !u!4 &4507726264892719203 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9153924999194243853, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4722005990821294958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5047785398308574341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7df1e18cc7ed2b04088dc94ee9fd931e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4722005990821294958}
+  m_PrefabAsset: {fileID: 0}

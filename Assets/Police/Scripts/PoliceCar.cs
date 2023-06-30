@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PoliceCar : MonoBehaviour, IExplode
 {
-    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] public float moveSpeed = 3f;
     [SerializeField] private float lightTime = .5f;
     [SerializeField] private float tireRotateSpeed = 10f;
 
@@ -14,6 +14,7 @@ public class PoliceCar : MonoBehaviour, IExplode
     private Light[] lights;
 
     public static Action OnEndGame;
+    public static Action OnDeath;
     private bool gameOver;
 
     // Start is called before the first frame update
@@ -28,7 +29,9 @@ public class PoliceCar : MonoBehaviour, IExplode
 
     private void OnDestroy()
     {
+        GameManager.instance.ModifyScore(1);
         OnEndGame -= OnEndGameInternal;
+        OnDeath?.Invoke();
     }
 
     private void OnEndGameInternal()
